@@ -1,22 +1,28 @@
 const questions = [
   {
-    text: "Will you be my Valentine, Elza?",
-    yes: "Yes, obviously 💖",
-    no: "Nope",
+    text: "Princesse Elza, Valentine duo with me?",
+    yes: "Queue duo 💜",
+    no: "Nah",
   },
   {
-    text: "Do you accept unlimited goofy memes from me?",
-    yes: "I accept the memes",
-    no: "Too many memes",
+    text: "Cutie, should I keep sending Mel highlights?",
+    yes: "Yes, send clips",
+    no: "Too many clips",
   },
   {
-    text: "Can I reserve a lifetime of hand-holding?",
-    yes: "Yes, hold my hand",
-    no: "Hands are busy",
+    text: "Russia to France arc this year — I help with logistics?",
+    yes: "Yes, partner mode",
+    no: "I got it solo",
+  },
+  {
+    text: "French + Korean study dates with snacks?",
+    yes: "Oui / 네 / Yes",
+    no: "No snacks",
   },
 ];
 
 const questionEl = document.getElementById("question");
+const questionCountEl = document.getElementById("question-count");
 const yesButton = document.getElementById("yes-button");
 const noButton = document.getElementById("no-button");
 const result = document.getElementById("result");
@@ -28,13 +34,14 @@ let currentIndex = 0;
 const updateQuestion = () => {
   const current = questions[currentIndex];
   questionEl.textContent = current.text;
+  questionCountEl.textContent = `${currentIndex + 1}/${questions.length}`;
   yesButton.textContent = current.yes;
   noButton.textContent = current.no;
   noButton.style.transform = "translate(0, 0)";
 };
 
 const moveNoButton = () => {
-  const maxX = 180;
+  const maxX = 200;
   const maxY = 120;
   const randomX = Math.floor(Math.random() * maxX - maxX / 2);
   const randomY = Math.floor(Math.random() * maxY - maxY / 2);
