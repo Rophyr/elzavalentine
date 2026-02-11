@@ -3,56 +3,65 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Elza.exe — Valentine Build</title>
+    <title>Placeholder Valentine Site</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
     <main class="card">
-      <p class="tag">for princesse & cutie ✨</p>
-      <h1>Elza, quick Valentine side-quest.</h1>
-      <p class="subtitle">
-        Clean UI, no cringe overload. Just a short compatibility check before we
-        queue life duo.
-      </p>
+      <p class="tag">placeholder tag line</p>
+      <h1 id="main-title">placeholder main heading</h1>
+      <p class="subtitle" id="subtitle">placeholder subtitle text that you can edit later.</p>
 
-      <div class="meta">
-        <span>🎮 Main: Mel</span>
-        <span>🇷🇺 ➜ 🇫🇷 mission</span>
-        <span>🗣️ French + Korean grind</span>
+      <div class="meta" id="meta-chips">
+        <span>placeholder chip 1</span>
+        <span>placeholder chip 2</span>
+        <span>placeholder chip 3</span>
       </div>
 
-      <section class="question" aria-live="polite">
-        <div class="question-row">
-          <h2 id="question">Question goes here</h2>
-          <span class="question-count" id="question-count">1/4</span>
+      <section class="progress-wrap" aria-label="progress section">
+        <div class="progress-head">
+          <span id="progress-label">placeholder progress label</span>
+          <span id="question-count">1/5</span>
         </div>
-        <p class="hint">No pressure. (okay maybe tiny pressure)</p>
-        <div class="answers">
-          <button class="answer yes" id="yes-button" type="button">Yes</button>
-          <button class="answer no" id="no-button" type="button">No</button>
+        <div class="progress-bar" role="progressbar" aria-valuemin="1" aria-valuemax="5" aria-valuenow="1">
+          <div class="progress-fill" id="progress-fill"></div>
         </div>
       </section>
 
+      <section class="question" aria-live="polite">
+        <h2 id="question">placeholder question text</h2>
+        <p class="hint" id="hint">placeholder helper text</p>
+
+        <div class="answers" id="answers-area">
+          <button class="answer yes" id="yes-button" type="button">placeholder yes</button>
+          <button class="answer no" id="no-button" type="button">placeholder no</button>
+        </div>
+      </section>
+
+      <section class="extras" aria-label="extra features">
+        <button class="mini-btn" id="theme-toggle" type="button">toggle theme</button>
+        <button class="mini-btn" id="sparkle-button" type="button">spawn hearts</button>
+        <button class="mini-btn" id="playlist-button" type="button">playlist mode: off</button>
+      </section>
+
+      <div class="status-line" id="status-line">placeholder status updates appear here.</div>
+
       <div class="result" id="result" hidden>
-        <h2>Locked in ✅</h2>
-        <p>
-          Nice. Valentine accepted. Next updates include: League games, language
-          practice, and one-way ticket from "I miss you" to "you’re here".
-        </p>
-        <p class="signature">Signed: your biggest fan</p>
-        <button class="answer yes" id="restart-button" type="button">
-          Run it again
-        </button>
+        <h2>placeholder result heading</h2>
+        <p>placeholder result paragraph for your custom message.</p>
+        <button class="answer yes" id="restart-button" type="button">restart</button>
       </div>
     </main>
 
     <div class="floating-icons" aria-hidden="true">
-      <span>✨</span>
       <span>💗</span>
-      <span>🎮</span>
-      <span>🛫</span>
-      <span>📚</span>
+      <span>✨</span>
+      <span>💞</span>
+      <span>💘</span>
+      <span>🌸</span>
     </div>
+
+    <div class="confetti-layer" id="confetti-layer" aria-hidden="true"></div>
 
     <script src="script.js"></script>
   </body>
