@@ -41,7 +41,31 @@
       <section class="extras" aria-label="extra features">
         <button class="mini-btn" id="theme-toggle" type="button">toggle theme</button>
         <button class="mini-btn" id="sparkle-button" type="button">spawn hearts</button>
-        <button class="mini-btn" id="playlist-button" type="button">playlist mode: off</button>
+        <button class="mini-btn" id="playlist-button" type="button">playlist: load songs</button>
+      </section>
+
+      <section class="player" id="player" hidden aria-label="music player">
+        <div class="player-head">
+          <strong id="track-title">not loaded</strong>
+          <span id="track-artist">placeholder artist</span>
+        </div>
+
+        <div class="player-bar-wrap">
+          <span id="current-time">0:00</span>
+          <input id="seek-bar" class="seek-bar" type="range" min="0" max="100" value="0" />
+          <span id="duration">0:00</span>
+        </div>
+
+        <div class="player-controls">
+          <button class="mini-btn" id="prev-track" type="button">prev</button>
+          <button class="mini-btn" id="play-pause" type="button">play</button>
+          <button class="mini-btn" id="next-track" type="button">next</button>
+          <label class="volume-wrap">
+            vol
+            <input id="volume-bar" type="range" min="0" max="1" step="0.01" value="0.8" />
+          </label>
+        </div>
+        <audio id="audio-player" preload="metadata"></audio>
       </section>
 
       <div class="status-line" id="status-line">placeholder status updates appear here.</div>
