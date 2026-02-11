@@ -62,6 +62,7 @@ body:not(.loading) .intro {
 }
 
 .card {
+  position: relative;
   width: min(700px, 100%);
   background: var(--surface);
   backdrop-filter: blur(8px);
@@ -70,6 +71,20 @@ body:not(.loading) .intro {
   padding: 28px;
   box-shadow: 0 24px 60px rgba(73, 44, 114, 0.24);
   animation: cardIn 500ms ease;
+}
+
+.theme-fab {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  border: 1px solid rgba(123, 66, 206, 0.35);
+  background: rgba(151, 101, 228, 0.16);
+  color: var(--text);
+  border-radius: 999px;
+  width: 38px;
+  height: 38px;
+  cursor: pointer;
+  font-size: 1rem;
 }
 
 .tag { margin: 0 0 10px; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); font-size: .8rem; }
@@ -125,7 +140,12 @@ h1 { margin: 0 0 10px; font-size: 2rem; }
 body.dark .answer.no { background: #3a2c56; color: #dfd1ff; border-color: #6f52a6; }
 .answer.no.caught { background: #a7f3c3; color: #0f5132; border-color: #6ad79f; }
 
-.extras { margin-top: 18px; display: flex; flex-wrap: wrap; gap: 8px; }
+.love-meter { margin-top: 14px; }
+.love-meter p { margin: 0 0 6px; color: var(--muted); font-size: .86rem; text-transform: uppercase; letter-spacing: .06em; }
+.love-track { height: 10px; border-radius: 999px; background: rgba(122,74,194,.15); overflow: hidden; }
+.love-track span { display:block; height:100%; width: 20%; background: linear-gradient(90deg,#ff7bc3,var(--accent)); transition: width 250ms ease; }
+
+.extras { margin-top: 14px; display: flex; flex-wrap: wrap; gap: 8px; }
 .mini-btn {
   border: 1px solid rgba(123, 66, 206, 0.35);
   background: rgba(151, 101, 228, 0.12);

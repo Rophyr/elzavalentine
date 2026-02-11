@@ -51,6 +51,7 @@ const volumeBar = document.getElementById("volume-bar");
 const prevTrackButton = document.getElementById("prev-track");
 const playPauseButton = document.getElementById("play-pause");
 const nextTrackButton = document.getElementById("next-track");
+const loveFill = document.getElementById("love-fill");
 
 let currentIndex = 0;
 let dodgeCount = 0;
@@ -85,6 +86,7 @@ const updateQuestion = () => {
   noButton.textContent = q.no;
   questionCountEl.textContent = `${currentIndex + 1}/${questions.length}`;
   progressFill.style.width = `${progress}%`;
+  loveFill.style.width = `${Math.min(100, 20 + currentIndex * 20)}%`;
   noButton.classList.remove("caught");
 
   document.querySelector(".progress-bar").setAttribute("aria-valuenow", String(currentIndex + 1));
@@ -307,8 +309,13 @@ noButton.addEventListener("click", () => {
 
 restartButton.addEventListener("click", resetFlow);
 
+const syncThemeIcon = () => {
+  themeToggle.textContent = document.body.classList.contains("dark") ? "🌙" : "☀️";
+};
+
 themeToggle.addEventListener("click", () => {
   document.body.classList.toggle("dark");
+  syncThemeIcon();
   setStatus("Theme toggled.");
 });
 
@@ -356,5 +363,12 @@ volumeBar.addEventListener("input", () => {
 });
 
 updateQuestion();
+syncThemeIcon();
 startAmbientHearts();
 setStatus("Happy Valentine’s Day, Elza 💜");
+
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Enter" && !document.body.classList.contains("loading") && !result.hidden) {
+    resetFlow();
+  }
+});
