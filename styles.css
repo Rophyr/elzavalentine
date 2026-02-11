@@ -120,7 +120,7 @@ h1 { margin: 0 0 10px; font-size: 2rem; }
   background: #fff;
   color: #6b5686;
   border: 1px solid #dbc8ff;
-  transition: left 160ms cubic-bezier(.2,.9,.3,1), top 160ms cubic-bezier(.2,.9,.3,1), background 220ms ease, color 220ms ease;
+  transition: left 320ms cubic-bezier(.22,.61,.36,1), top 320ms cubic-bezier(.22,.61,.36,1), background 220ms ease, color 220ms ease;
 }
 body.dark .answer.no { background: #3a2c56; color: #dfd1ff; border-color: #6f52a6; }
 .answer.no.caught { background: #a7f3c3; color: #0f5132; border-color: #6ad79f; }

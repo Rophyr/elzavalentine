@@ -1,9 +1,17 @@
 const questions = [
-  { text: "Will you be my Valentine, Elza?", yes: "yes 💜", no: "no" },
-  { text: "Should we queue one game and call it a date?", yes: "yes, queue us", no: "nope" },
-  { text: "Can I keep being your #1 supporter?", yes: "yes, always", no: "hmm no" },
-  { text: "Do we agree this website is cute and unhinged?", yes: "yes it's perfect", no: "not really" },
-  { text: "Final answer: us, together?", yes: "yes x1000", no: "let me think" },
+  {
+    text: "I love seeing you improve at everything you do. League, French, your mindset, all of it. You're doing amazing and I'm proud of you every day.",
+    yes: "that means a lot 💜",
+    no: "no",
+  },
+  {
+    text: "The affection I have for you is huge. You're my future, and I'll be yours.",
+    yes: "yes, future us",
+    no: "hmm no",
+  },
+  { text: "3rd page — to be written soon.", yes: "continue", no: "nope" },
+  { text: "4th page — to be written soon.", yes: "continue", no: "not really" },
+  { text: "5th page — to be written soon.", yes: "finish", no: "let me think" },
 ];
 
 const tracks = [
@@ -92,8 +100,14 @@ const moveNoButton = () => {
   const maxX = Math.max(0, areaRect.width - buttonRect.width);
   const maxY = Math.max(0, areaRect.height - buttonRect.height);
 
-  const nextX = Math.floor(Math.random() * maxX);
-  const nextY = Math.floor(Math.random() * maxY);
+  const currentLeft = Number.parseFloat(noButton.style.left || "150") || 150;
+  const currentTop = Number.parseFloat(noButton.style.top || "0") || 0;
+
+  const stepX = Math.floor(Math.random() * 180 - 90);
+  const stepY = Math.floor(Math.random() * 120 - 60);
+
+  const nextX = Math.min(maxX, Math.max(0, currentLeft + stepX));
+  const nextY = Math.min(maxY, Math.max(0, currentTop + stepY));
 
   noButton.style.left = `${nextX}px`;
   noButton.style.top = `${nextY}px`;
@@ -263,7 +277,7 @@ answersArea.addEventListener("mousemove", (event) => {
     event.clientY > rect.top - 60 &&
     event.clientY < rect.bottom + 60;
 
-  if (close) {
+  if (close && Math.random() < 0.25) {
     moveNoButton();
   }
 });
@@ -273,11 +287,11 @@ noButton.addEventListener("pointerdown", (event) => {
     return;
   }
   dodgeCount += 1;
-  const letClickThrough = dodgeCount % 4 === 0;
+  const letClickThrough = dodgeCount % 2 === 0;
   if (!letClickThrough) {
     event.preventDefault();
     moveNoButton();
-    setStatus("No button dodged you.");
+    setStatus("Close one 😌");
   }
 });
 
