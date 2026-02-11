@@ -3,24 +3,33 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Placeholder Valentine Site</title>
+    <title>Elza — Valentine</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
-  <body>
-    <main class="card">
-      <p class="tag">placeholder tag line</p>
-      <h1 id="main-title">placeholder main heading</h1>
-      <p class="subtitle" id="subtitle">placeholder subtitle text that you can edit later.</p>
+  <body class="dark loading">
+    <div class="ambient-hearts" id="ambient-hearts" aria-hidden="true"></div>
+
+    <section class="intro" id="intro" aria-live="polite">
+      <p class="intro-kicker">for Elza 💜</p>
+      <h1>Happy Valentine’s Day</h1>
+      <p>A tiny website made with love, chaos, and a slightly unfair “No” button.</p>
+      <button id="enter-site" class="answer yes" type="button">Enter</button>
+    </section>
+
+    <main class="card" id="main-card" hidden>
+      <p class="tag">for princesse & cutie</p>
+      <h1 id="main-title">A tiny valentine checkpoint</h1>
+      <p class="subtitle" id="subtitle">Answer the questions and unlock your official "you said yes" certificate.</p>
 
       <div class="meta" id="meta-chips">
-        <span>placeholder chip 1</span>
-        <span>placeholder chip 2</span>
-        <span>placeholder chip 3</span>
+        <span>duo queue ready</span>
+        <span>long distance, same team</span>
+        <span>cute mode enabled</span>
       </div>
 
       <section class="progress-wrap" aria-label="progress section">
         <div class="progress-head">
-          <span id="progress-label">placeholder progress label</span>
+          <span id="progress-label">question progress</span>
           <span id="question-count">1/5</span>
         </div>
         <div class="progress-bar" role="progressbar" aria-valuemin="1" aria-valuemax="5" aria-valuenow="1">
@@ -29,25 +38,25 @@
       </section>
 
       <section class="question" aria-live="polite">
-        <h2 id="question">placeholder question text</h2>
-        <p class="hint" id="hint">placeholder helper text</p>
+        <h2 id="question">Will you be my Valentine?</h2>
+        <p class="hint" id="hint">The “No” button has trust issues and might run away.</p>
 
         <div class="answers" id="answers-area">
-          <button class="answer yes" id="yes-button" type="button">placeholder yes</button>
-          <button class="answer no" id="no-button" type="button">placeholder no</button>
+          <button class="answer yes" id="yes-button" type="button">yes, obviously</button>
+          <button class="answer no" id="no-button" type="button">no</button>
         </div>
       </section>
 
       <section class="extras" aria-label="extra features">
-        <button class="mini-btn" id="theme-toggle" type="button">toggle theme</button>
-        <button class="mini-btn" id="sparkle-button" type="button">spawn hearts</button>
-        <button class="mini-btn" id="playlist-button" type="button">playlist: load songs</button>
+        <button class="mini-btn" id="theme-toggle" type="button">toggle light/dark</button>
+        <button class="mini-btn" id="sparkle-button" type="button">drop extra hearts</button>
+        <button class="mini-btn" id="playlist-button" type="button">load CAS playlist</button>
       </section>
 
       <section class="player" id="player" hidden aria-label="music player">
         <div class="player-head">
-          <strong id="track-title">not loaded</strong>
-          <span id="track-artist">placeholder artist</span>
+          <strong id="track-title">Cigarettes After Sex</strong>
+          <span id="track-artist">full songs via YouTube</span>
         </div>
 
         <div class="player-bar-wrap">
@@ -62,17 +71,18 @@
           <button class="mini-btn" id="next-track" type="button">next</button>
           <label class="volume-wrap">
             vol
-            <input id="volume-bar" type="range" min="0" max="1" step="0.01" value="0.8" />
+            <input id="volume-bar" type="range" min="0" max="100" step="1" value="80" />
           </label>
         </div>
-        <audio id="audio-player" preload="metadata"></audio>
+
+        <div class="yt-holder" id="yt-holder"></div>
       </section>
 
-      <div class="status-line" id="status-line">placeholder status updates appear here.</div>
+      <div class="status-line" id="status-line">Ready when you are 💫</div>
 
       <div class="result" id="result" hidden>
-        <h2>placeholder result heading</h2>
-        <p>placeholder result paragraph for your custom message.</p>
+        <h2>Valentine contract accepted ✅</h2>
+        <p>You unlocked unlimited kisses, cozy playlists, and permanent duo partner privileges.</p>
         <button class="answer yes" id="restart-button" type="button">restart</button>
       </div>
     </main>
@@ -87,6 +97,7 @@
 
     <div class="confetti-layer" id="confetti-layer" aria-hidden="true"></div>
 
+    <script src="https://www.youtube.com/iframe_api"></script>
     <script src="script.js"></script>
   </body>
 </html>
