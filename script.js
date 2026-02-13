@@ -1,6 +1,6 @@
 const questions = [
   {
-    text: "I love seeing you improve at everything you do—in League, in French, mentally, and everywhere else. You're doing great, and I'm genuinely proud of you.",
+    text: "I love seeing you improve at everything you do-in League, in French, mentally, and everywhere else. You're doing great, and I'm genuinely proud of you.",
     yes: "awww okay 💜",
     no: "no",
   },
@@ -190,7 +190,7 @@ const showResult = () => {
   questionSection.hidden = true;
   result.hidden = false;
   spawnHearts(16);
-  setStatus("You reached the official yes ending.");
+  setStatus("");
 };
 
 const resetFlow = () => {
