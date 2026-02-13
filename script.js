@@ -1,17 +1,39 @@
 const questions = [
   {
-    text: "I love seeing you improve at everything you do. League, French, your mindset, all of it. You're doing amazing and I'm proud of you every day.",
-    yes: "that means a lot 💜",
+    text: "I love seeing you improve at everything you do. In League, in French, mentally, everywhere. You're doing great and I'm genuinely proud of you.",
+    yes: "awww okay 💜",
     no: "no",
   },
   {
-    text: "The affection I have for you is huge. You're my future, and I'll be yours.",
+    text: "The affection I have for you is huge. You'll be my future and I will be yours.",
     yes: "yes, future us",
     no: "hmm no",
   },
-  { text: "3rd page — to be written soon.", yes: "continue", no: "nope" },
-  { text: "4th page — to be written soon.", yes: "continue", no: "not really" },
-  { text: "5th page — to be written soon.", yes: "finish", no: "let me think" },
+  {
+    text: "Question 3: I'll build a massive salmon reserve just for you because you love salmon.",
+    yes: "approved 🐟",
+    no: "no salmon",
+  },
+  {
+    text: "Question 4: when you get mad sometimes, it's okay — I'll calm you down with kisses every time.",
+    yes: "deal 💋",
+    no: "still mad",
+  },
+  {
+    text: "Question 5: I love our kinky talks. I'm shy sometimes, but I really love them.",
+    yes: "keep talking 😳",
+    no: "too spicy",
+  },
+  {
+    text: "Question 6: I see you as my wife. We'll travel the world and build a cozy house together.",
+    yes: "yes, let's go 🌍",
+    no: "hmm maybe",
+  },
+  {
+    text: "Question 7: final step unlocked.",
+    yes: "show ending",
+    no: "no",
+  },
 ];
 
 const tracks = [
@@ -33,6 +55,8 @@ const result = document.getElementById("result");
 const questionSection = document.querySelector(".question");
 const restartButton = document.getElementById("restart-button");
 const statusLine = document.getElementById("status-line");
+const spoilerToggle = document.getElementById("spoiler-toggle");
+const spoilerText = document.getElementById("spoiler-text");
 const answersArea = document.getElementById("answers-area");
 const themeToggle = document.getElementById("theme-toggle");
 const sparkleButton = document.getElementById("sparkle-button");
@@ -61,6 +85,7 @@ let currentTrackIndex = 0;
 let isSeeking = false;
 let ytPlayer = null;
 let tickInterval;
+let pendingAutoplay = false;
 
 const setStatus = (text) => {
   statusLine.textContent = text;
@@ -86,8 +111,12 @@ const updateQuestion = () => {
   noButton.textContent = q.no;
   questionCountEl.textContent = `${currentIndex + 1}/${questions.length}`;
   progressFill.style.width = `${progress}%`;
-  loveFill.style.width = `${Math.min(100, 20 + currentIndex * 20)}%`;
+  loveFill.style.width = `${progress}%`;
   noButton.classList.remove("caught");
+
+  const isFinalQuestion = currentIndex === questions.length - 1;
+  spoilerToggle.hidden = !isFinalQuestion;
+  spoilerText.hidden = true;
 
   document.querySelector(".progress-bar").setAttribute("aria-valuenow", String(currentIndex + 1));
 };
@@ -236,6 +265,11 @@ const createYouTubePlayer = () => {
         ytPlayer.setVolume(Number(volumeBar.value));
         applyTrackInfo();
         startTicker();
+        if (pendingAutoplay) {
+          ytPlayer.playVideo();
+          playPauseButton.textContent = "pause";
+          pendingAutoplay = false;
+        }
       },
       onStateChange: (event) => {
         if (event.data === window.YT.PlayerState.ENDED) {
@@ -254,7 +288,17 @@ enterButton.addEventListener("click", () => {
   document.body.classList.remove("loading");
   mainCard.hidden = false;
   intro.hidden = true;
-  setStatus("Ready when you are 💫");
+  playerSection.hidden = false;
+  playlistReady = true;
+  playlistButton.textContent = "hide playlist";
+  pendingAutoplay = true;
+  createYouTubePlayer();
+  if (ytPlayer && playerReady) {
+    ytPlayer.playVideo();
+    playPauseButton.textContent = "pause";
+    pendingAutoplay = false;
+  }
+  setStatus("Quiz started. Music on ✨");
 });
 
 yesButton.addEventListener("click", () => {
@@ -327,11 +371,7 @@ sparkleButton.addEventListener("click", () => {
 playlistButton.addEventListener("click", () => {
   if (!playlistReady) {
     playlistReady = true;
-    playerSection.hidden = false;
     createYouTubePlayer();
-    setStatus("CAS playlist loaded (full songs). ");
-    playlistButton.textContent = "hide playlist";
-    return;
   }
   playerSection.hidden = !playerSection.hidden;
   playlistButton.textContent = playerSection.hidden ? "show playlist" : "hide playlist";
@@ -360,6 +400,10 @@ volumeBar.addEventListener("input", () => {
     return;
   }
   ytPlayer.setVolume(Number(volumeBar.value));
+});
+
+spoilerToggle.addEventListener("click", () => {
+  spoilerText.hidden = !spoilerText.hidden;
 });
 
 updateQuestion();

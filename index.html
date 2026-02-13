@@ -12,7 +12,6 @@
     <section class="intro" id="intro" aria-live="polite">
       <p class="intro-kicker">for Elza 💜</p>
       <h1>Happy Valentine’s Day</h1>
-      <p>A tiny website made with love, chaos, and a slightly unfair “No” button.</p>
       <button id="enter-site" class="answer yes" type="button">Enter</button>
     </section>
 
@@ -20,20 +19,14 @@
       <button class="theme-fab" id="theme-toggle" type="button" aria-label="toggle theme">🌙</button>
       <p class="tag">for princesse & cutie</p>
       <h1 id="main-title">A tiny valentine checkpoint</h1>
-      <p class="subtitle" id="subtitle">Answer the questions and unlock your official "you said yes" certificate.</p>
-
-      <div class="meta" id="meta-chips">
-        <span>duo queue ready</span>
-        <span>long distance, same team</span>
-        <span>cute mode enabled</span>
-      </div>
+      <p class="subtitle" id="subtitle">Tap through the little love checklist 💜</p>
 
       <section class="progress-wrap" aria-label="progress section">
         <div class="progress-head">
           <span id="progress-label">question progress</span>
-          <span id="question-count">1/5</span>
+          <span id="question-count">1/7</span>
         </div>
-        <div class="progress-bar" role="progressbar" aria-valuemin="1" aria-valuemax="5" aria-valuenow="1">
+        <div class="progress-bar" role="progressbar" aria-valuemin="1" aria-valuemax="7" aria-valuenow="1">
           <div class="progress-fill" id="progress-fill"></div>
         </div>
       </section>
@@ -41,6 +34,8 @@
       <section class="question" aria-live="polite">
         <h2 id="question">Will you be my Valentine?</h2>
         <p class="hint" id="hint">Choose your answer below.</p>
+        <p class="spoiler-toggle" id="spoiler-toggle" hidden>🎁 Spoiler: click to reveal your gift code</p>
+        <p class="spoiler-text" id="spoiler-text" hidden>Steam code: I'll add it tomorrow 💌</p>
 
         <div class="answers" id="answers-area">
           <button class="answer yes" id="yes-button" type="button">yes, obviously</button>
@@ -77,7 +72,7 @@
           <button class="mini-btn" id="next-track" type="button">next</button>
           <label class="volume-wrap">
             vol
-            <input id="volume-bar" type="range" min="0" max="100" step="1" value="80" />
+            <input id="volume-bar" type="range" min="0" max="100" step="1" value="20" />
           </label>
         </div>
 
