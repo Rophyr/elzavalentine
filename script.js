@@ -85,6 +85,7 @@ let isSeeking = false;
 let ytPlayer = null;
 let tickInterval;
 let pendingAutoplay = false;
+let questionAnimTimer;
 
 const setStatus = (text) => {
   statusLine.textContent = text;
@@ -99,6 +100,16 @@ const formatTime = (seconds) => {
     .toString()
     .padStart(2, "0");
   return `${m}:${s}`;
+};
+
+const triggerQuestionTransition = () => {
+  questionSection.classList.remove("swap");
+  void questionSection.offsetWidth;
+  questionSection.classList.add("swap");
+  clearTimeout(questionAnimTimer);
+  questionAnimTimer = setTimeout(() => {
+    questionSection.classList.remove("swap");
+  }, 300);
 };
 
 const updateQuestion = () => {
@@ -117,6 +128,7 @@ const updateQuestion = () => {
   spoilerText.hidden = true;
 
   document.querySelector(".progress-bar").setAttribute("aria-valuenow", String(currentIndex + 1));
+  triggerQuestionTransition();
 };
 
 const moveNoButton = () => {
