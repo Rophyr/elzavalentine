@@ -5,32 +5,32 @@ const questions = [
     no: "no",
   },
   {
-    text: "The affection I have for you is huge. You'll be my future and I will be yours.",
+    text: "The love I have for you is just unexplainable. All I know is that you'll be my future and I will be yours.",
     yes: "yes, future us",
     no: "hmm no",
   },
   {
-    text: "Question 3: I'll build a massive salmon reserve just for you because you love salmon.",
+    text: "I'll build a massive salmon reserve just for you (and me 😭😭).",
     yes: "approved 🐟",
     no: "no salmon",
   },
   {
-    text: "Question 4: when you get mad sometimes, it's okay — I'll calm you down with kisses every time.",
+    text: "Don't be ashamed of getting mad love, I'll just be able to calm you even more with kisses everytime",
     yes: "deal 💋",
     no: "still mad",
   },
   {
-    text: "Question 5: I love our kinky talks. I'm shy sometimes, but I really love them.",
+    text: "I love our kinky talks. I'm shy sometimes, but I really love them.",
     yes: "keep talking 😳",
     no: "too spicy",
   },
   {
-    text: "Question 6: I see you as my wife. We'll travel the world and build a cozy house together.",
+    text: "I see you as my wife. We'll travel the world and build a cozy house together.",
     yes: "yes, let's go 🌍",
     no: "hmm maybe",
   },
   {
-    text: "Question 7: final step unlocked.",
+    text: "Final step unlocked.",
     yes: "show ending",
     no: "no",
   },
@@ -75,7 +75,6 @@ const volumeBar = document.getElementById("volume-bar");
 const prevTrackButton = document.getElementById("prev-track");
 const playPauseButton = document.getElementById("play-pause");
 const nextTrackButton = document.getElementById("next-track");
-const loveFill = document.getElementById("love-fill");
 
 let currentIndex = 0;
 let dodgeCount = 0;
@@ -111,7 +110,6 @@ const updateQuestion = () => {
   noButton.textContent = q.no;
   questionCountEl.textContent = `${currentIndex + 1}/${questions.length}`;
   progressFill.style.width = `${progress}%`;
-  loveFill.style.width = `${progress}%`;
   noButton.classList.remove("caught");
 
   const isFinalQuestion = currentIndex === questions.length - 1;

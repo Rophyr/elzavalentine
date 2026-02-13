@@ -133,10 +133,6 @@ h1 { margin: 0 0 10px; font-size: 2rem; }
 body.dark .answer.no { background: #3a2c56; color: #dfd1ff; border-color: #6f52a6; }
 .answer.no.caught { background: #a7f3c3; color: #0f5132; border-color: #6ad79f; }
 
-.love-meter { margin-top: 14px; }
-.love-meter p { margin: 0 0 6px; color: var(--muted); font-size: .86rem; text-transform: uppercase; letter-spacing: .06em; }
-.love-track { height: 10px; border-radius: 999px; background: rgba(122,74,194,.15); overflow: hidden; }
-.love-track span { display:block; height:100%; width: 20%; background: linear-gradient(90deg,#ff7bc3,var(--accent)); transition: width 250ms ease; }
 
 .extras { margin-top: 14px; display: flex; flex-wrap: wrap; gap: 8px; }
 .mini-btn {
