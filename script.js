@@ -31,7 +31,7 @@ const questions = [
   },
   {
     text: "Final step unlocked.",
-    yes: "show ending",
+    yes: "continue",
     no: "no",
   },
 ];
