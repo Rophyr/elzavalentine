@@ -1,11 +1,11 @@
 const questions = [
   {
-    text: "I love seeing you improve at everything you do. In League, in French, mentally, everywhere. You're doing great and I'm genuinely proud of you.",
+    text: "I love seeing you improve at everything you do—in League, in French, mentally, and everywhere else. You're doing great, and I'm genuinely proud of you.",
     yes: "awww okay 💜",
     no: "no",
   },
   {
-    text: "The love I have for you is just unexplainable. All I know is that you'll be my future and I will be yours.",
+    text: "The love I have for you is just unexplainable. All I know is that you'll be my future, and I will be yours.",
     yes: "yes, future us",
     no: "hmm no",
   },
@@ -15,7 +15,7 @@ const questions = [
     no: "no salmon",
   },
   {
-    text: "Don't be ashamed of getting mad love, I'll just be able to calm you even more with kisses everytime",
+    text: "Don't be ashamed of getting mad, love. I'll calm you down even more with kisses every time.",
     yes: "deal 💋",
     no: "still mad",
   },
@@ -296,7 +296,7 @@ enterButton.addEventListener("click", () => {
     playPauseButton.textContent = "pause";
     pendingAutoplay = false;
   }
-  setStatus("Quiz started. Music on ✨");
+  setStatus("Quiz started. Music is on ✨");
 });
 
 yesButton.addEventListener("click", () => {
