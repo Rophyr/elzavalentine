@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Elza - Valentine</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="dark loading">
+    <div class="ambient-hearts" id="ambient-hearts" aria-hidden="true"></div>
+
+    <section class="intro" id="intro" aria-live="polite">
+      <p class="intro-kicker">for Elza 💜</p>
+      <h1>Happy Valentine’s Day</h1>
+      <button id="enter-site" class="answer yes" type="button">Enter</button>
+    </section>
+
+    <main class="card" id="main-card" hidden>
+      <button class="theme-fab" id="theme-toggle" type="button" aria-label="toggle theme">🌙</button>
+      <p class="tag">For my princesse & future Wife</p>
+      <h1 id="main-title">little dum valentine thingy</h1>
+      <p class="subtitle" id="subtitle">Tap through this checklist love💜</p>
+
+      <section class="progress-wrap" aria-label="progress section">
+        <div class="progress-head">
+          <span id="progress-label">question progress</span>
+          <span id="question-count">1/7</span>
+        </div>
+        <div class="progress-bar" role="progressbar" aria-valuemin="1" aria-valuemax="7" aria-valuenow="1">
+          <div class="progress-fill" id="progress-fill"></div>
+        </div>
+      </section>
+
+      <section class="question" aria-live="polite">
+        <h2 id="question">Will you be my Valentine?</h2>
+        <p class="hint" id="hint">Choose your answer below.</p>
+        <p class="spoiler-toggle" id="spoiler-toggle" hidden>🎁 Spoiler: click to reveal your gift</p>
+        <p class="spoiler-text" id="spoiler-text" hidden>Check your steam gifts, I promise you will like it</p>
+
+        <div class="answers" id="answers-area">
+          <button class="answer yes" id="yes-button" type="button">yes, obviously</button>
+          <button class="answer no" id="no-button" type="button">no</button>
+        </div>
+      </section>
+
+      <section class="extras" aria-label="extra features">
+        <button class="mini-btn" id="sparkle-button" type="button">drop extra hearts</button>
+        <button class="mini-btn" id="playlist-button" type="button">load CAS playlist</button>
+      </section>
+
+      <section class="player" id="player" hidden aria-label="music player">
+        <div class="player-head">
+          <strong id="track-title">Cigarettes After Sex</strong>
+          <span id="track-artist">full songs via YouTube</span>
+        </div>
+
+        <div class="player-bar-wrap">
+          <span id="current-time">0:00</span>
+          <input id="seek-bar" class="seek-bar" type="range" min="0" max="100" value="0" />
+          <span id="duration">0:00</span>
+        </div>
+
+        <div class="player-controls">
+          <button class="mini-btn" id="prev-track" type="button">prev</button>
+          <button class="mini-btn" id="play-pause" type="button">play</button>
+          <button class="mini-btn" id="next-track" type="button">next</button>
+          <label class="volume-wrap">
+            vol
+            <input id="volume-bar" type="range" min="0" max="100" step="1" value="20" />
+          </label>
+        </div>
+
+        <div class="yt-holder" id="yt-holder"></div>
+      </section>
+
+      <div class="status-line" id="status-line">Ready when you are 💫</div>
+
+      <div class="result" id="result" hidden>
+        <h2>Future wife contract accepted</h2>
+        <button class="answer yes" id="restart-button" type="button">restart</button>
+      </div>
+    </main>
+
+    <div class="floating-icons" aria-hidden="true">
+      <span>💗</span>
+      <span>✨</span>
+      <span>💞</span>
+      <span>💘</span>
+      <span>🌸</span>
+    </div>
+
+    <div class="confetti-layer" id="confetti-layer" aria-hidden="true"></div>
+
+    <script src="https://www.youtube.com/iframe_api"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
